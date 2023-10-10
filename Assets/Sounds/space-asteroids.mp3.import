@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/space-asteroids.mp3-b627442739e959fe453f646cb
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
