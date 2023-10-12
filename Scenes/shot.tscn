@@ -22,6 +22,7 @@ animations = [{
 size = Vector2(17, 6)
 
 [node name="Shot" type="Area2D" groups=["Shot"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_l4twa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

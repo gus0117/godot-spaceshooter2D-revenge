@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hf8kg8vemvyx"]
+[gd_scene load_steps=12 format=3 uid="uid://hf8kg8vemvyx"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_6myiw"]
 [ext_resource type="AudioStream" uid="uid://c4nsu4n52gt12" path="res://Assets/Sounds/space-asteroids.mp3" id="1_h6h6o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cigxvfxe3wtjs" path="res://Assets/Asteroids/asteroid.png" id="6_i1ln6"]
 [ext_resource type="PackedScene" uid="uid://dhf8j64elsn1c" path="res://Scenes/player.tscn" id="7_t5f0e"]
 [ext_resource type="PackedScene" uid="uid://fet5seto3c1u" path="res://Scenes/shot.tscn" id="8_sm84e"]
+[ext_resource type="PackedScene" uid="uid://svx1vstjwb8g" path="res://Scenes/gui.tscn" id="10_lqpjv"]
 
 [sub_resource type="Curve2D" id="Curve2D_xquom"]
 _data = {
@@ -16,11 +17,9 @@ _data = {
 }
 point_count = 4
 
-[node name="Level" type="Node2D" groups=["level"]]
+[node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_6myiw")
 enemy = ExtResource("2_7s82q")
-
-[node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Settings" type="Node" parent="."]
 
@@ -30,6 +29,7 @@ autoplay = true
 
 [node name="Timer" type="Timer" parent="Settings"]
 wait_time = 2.0
+autostart = true
 
 [node name="Background" type="Node" parent="."]
 
@@ -90,7 +90,11 @@ position = Vector2(776, 8)
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("7_t5f0e")]
-position = Vector2(99, 234)
+position = Vector2(200, 365)
 shot = ExtResource("8_sm84e")
 
+[node name="GUI" parent="." instance=ExtResource("10_lqpjv")]
+
 [connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Player"]

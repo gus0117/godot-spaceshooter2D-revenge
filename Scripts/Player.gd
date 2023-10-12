@@ -26,8 +26,8 @@ func anim_ctrl() -> void:
 
 
 func motion_ctrl() -> void:
-	velocity.x = GLOBAL.get_axis().x
-	velocity.y = GLOBAL.get_axis().y
+	velocity.x = GLOBAL.get_axis().x * SPEED
+	velocity.y = -GLOBAL.get_axis().y * SPEED
 	
 	move_and_slide()
 	
@@ -37,8 +37,8 @@ func motion_ctrl() -> void:
 
 func shot_ctrl() -> void:
 	$Flash.play("FLASH")
-	$Settings/AudioShoot.play()
+	$Settings/AudioShot.play()
 	
-	var shot_instance = shot.instance()
-	shot_instance.global_position = $Settings/ShootSpawn.global_position
+	var shot_instance = shot.instantiate()
+	shot_instance.global_position = $Settings/ShotSpawn.global_position
 	get_tree().call_group("Level", "add_child", shot_instance)

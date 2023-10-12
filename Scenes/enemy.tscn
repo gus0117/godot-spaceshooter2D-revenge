@@ -81,6 +81,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_c4xqy")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
@@ -88,6 +89,7 @@ script = ExtResource("1_c4xqy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_bp4i4")
 animation = &"FLY"
+autoplay = "FLY"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_tgprc")

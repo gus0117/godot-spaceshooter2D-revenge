@@ -9,7 +9,7 @@ const SPEED = 60
 func _process(delta):
 	#Another way to make conditionals
 	match explosion:
-		false: global_position -= SPEED * delta #Remember, negative indicate movement to the left
+		false: global_position.x -= SPEED * delta #Remember, negative indicate movement to the left
 
 func explosion_ctrl() -> void :
 	explosion = true

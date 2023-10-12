@@ -25,6 +25,6 @@ func parallax_bg(delta_time) -> void :
 	
 
 func _on_timer_timeout():
-	var enemy_instance = enemy.instance()
-	enemy_instance.global_position = $pathSpawn/PathFollow.global_position
+	var enemy_instance = enemy.instantiate()
+	enemy_instance.global_position = $PathSpawn/PathFollow.global_position
 	add_child(enemy_instance)
