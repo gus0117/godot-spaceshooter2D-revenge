@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://svx1vstjwb8g"]
+
+[ext_resource type="Script" path="res://Scripts/gui.gd" id="1_4qvgd"]
+[ext_resource type="Theme" uid="uid://11mmaiho5nu" path="res://Scenes/Themes/main_menu_theme.tres" id="1_mhiks"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_4qvgd")
+
+[node name="Scoreboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mhiks")
+
+[node name="MarginContainer" type="MarginContainer" parent="Scoreboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Score" type="Label" parent="Scoreboard/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 42
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="Scoreboard/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 42
+text = "Level: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="Scoreboard/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 42
+text = "Credits: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InsertCoin" type="Label" parent="Scoreboard/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 42
+text = "insert coin"
+horizontal_alignment = 1
+vertical_alignment = 1

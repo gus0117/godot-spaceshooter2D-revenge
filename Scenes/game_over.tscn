@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://vtwbmq80b3rb"]
+
+[ext_resource type="Theme" uid="uid://11mmaiho5nu" path="res://Scenes/Themes/main_menu_theme.tres" id="1_p3eqf"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="2_fyija"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p3eqf")
+script = ExtResource("2_fyija")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.152941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameOver" type="Label" parent="MarginContainer/Main/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 160
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="MarginContainer/Main/Title"]
+layout_mode = 2
+text = "Continue?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/Main"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Reset" type="Button" parent="MarginContainer/Main/Buttons"]
+layout_mode = 2
+text = "Reset"
+
+[node name="Exit" type="Button" parent="MarginContainer/Main/Buttons"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/Main/Buttons/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="MarginContainer/Main/Buttons/Exit" to="." method="_on_exit_pressed"]
